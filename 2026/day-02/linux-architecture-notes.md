@@ -1,4 +1,4 @@
-Linux System Fundamentals
+## Linux System Fundamentals
 
 Welcome to the Linux System Fundamentals guide. This document covers the core architecture, boot process, detailed file system hierarchy, and essential commands for daily operations.
 
