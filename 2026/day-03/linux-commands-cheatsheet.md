@@ -8,12 +8,12 @@ Build a practical Linux command cheat sheet that I can use daily as a DevOps Eng
 
 | Command              | Usage Example     | Description                                                                |
 | :------------------- | :---------------- | :------------------------------------------------------------------------- |
-| **`ps`**             | `ps aux`          | Displays a detailed snapshot of all currently running processes.           |
-| **`top`**            | `top`             | Shows real-time system statistics and a dynamic list of processes.         |
-| **`htop`**           | `htop`            | An interactive, colorful process viewer.(if installed)                     |
-| **`kill`**           | `kill 1234`       | Terminates the process with PID `1234`.                                    |
-| **`killall`**        | `killall firefox` | Kills all processes named "firefox".                                       |
-| **`pkill`**          | `pkill -u user`   | Signals processes based on name or other attributes (e.g., specific user). |
+| **`ps`**             | `ps aux`          | Displays a detailed snapshot of all currently running processes        |
+| **`top`**            | `top`             | Shows real-time system statistics and a dynamic list of processes       |
+| **`htop`**           | `htop`            | An interactive, colorful process viewer(if installed)                     |
+| **`kill`**           | `kill 1234`       | Terminates the process with PID `1234`                                 |
+| **`killall`**        | `killall firefox` | Kills all processes named "firefox"                                    |
+| **`pkill`**          | `pkill -u user`   | Signals processes based on name or other attributes (e.g., specific user) |
 | **`bg`**             | `bg %1`           | Move job to background                                                     |
 | **`fg`**             | `fg %1`           | Brings a background job to the foreground                                  |
 | **`ps -ef`**         | `ps -ef`          | View all running processes                                                 |
