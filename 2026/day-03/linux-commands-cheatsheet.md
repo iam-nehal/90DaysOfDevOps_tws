@@ -6,24 +6,34 @@ Build a practical Linux command cheat sheet that I can use daily as a DevOps Eng
 
 **Manage system resources, view running tasks, and control process execution.**
 
-| Command              | Usage Example     | Description                                                                |
-| :------------------- | :---------------- | :------------------------------------------------------------------------- |
-| **`ps`**             | `ps aux`          | Displays a detailed snapshot of all currently running processes        |
-| **`top`**            | `top`             | Shows real-time system statistics and a dynamic list of processes       |
-| **`htop`**           | `htop`            | An interactive, colorful process viewer(if installed)                     |
-| **`kill`**           | `kill 1234`       | Terminates the process with PID `1234`                                 |
-| **`killall`**        | `killall firefox` | Kills all processes named "firefox"                                    |
-| **`pkill`**          | `pkill -u user`   | Signals processes based on name or other attributes (e.g., specific user) |
-| **`bg`**             | `bg %1`           | Move job to background                                                     |
-| **`fg`**             | `fg %1`           | Brings a background job to the foreground                                  |
-| **`ps -ef`**         | `ps -ef`          | View all running processes                                                 |
-| `pgrep service`      | `pgrep nginx`     | Find PID of a process                                                      |
-| `pidof service`      | `pidof sshd`      | Get PID by process name                                                    |
-| `kill -9 PID`        | `kill -9 1234`    | Force kill a process with PID 1234                                         |
-| `pkill process name` | `pkill nginx`     | Kill process by name                                                       |
-| `nice -n 10 command` |                   | Start process with lower priority                                          |
-| `renice 5 PID`       |                   | Change running process priority                                            |
-| `jobs`               |                   | show background                                                            |
+| Command              | Usage Example     | Description                                                                | Flag / Inside command flag                                                            |
+| :------------------- | :---------------- | :------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **`ps`**             | `ps aux`          | Displays a detailed snapshot of all currently running processes.           | a=Processes of all users, u=User-oriented format, x=Include process without terminal  |
+| **`top`**            | `top`             | Shows real-time system statistics and a dynamic list of processes.         | P=Sort by CPU usage, M=Sort by Memory usage, k=Kill process, q=Quit                   |
+| **`htop`**           | `htop`            | An interactive, colorful process viewer.(if installed)                     |                                                                                       |
+| **`kill`**           | `kill 1234`       | Terminates the process with PID `1234`.                                    |                                                                                       |
+| **`killall`**        | `killall firefox` | Kills all processes named "firefox".                                       |                                                                                       |
+| **`pkill`**          | `pkill -u user`   | Signals processes based on name or other attributes (e.g., specific user). |                                                                                       |
+| **`bg`**             | `bg %1`           | Move job to background                                                     |                                                                                       |
+| **`fg`**             | `fg %1`           | Brings a background job to the foreground                                  |                                                                                       |
+| **`ps -ef`**         | `ps -ef`          | View all running processes                                                 | -e=show every process on the system, -f=Full format listing (UID, PID, PPID, CMD etc) |
+| `pgrep service`      | `pgrep nginx`     | Find PID of a process                                                      |                                                                                       |
+| `pidof service`      | `pidof sshd`      | Get PID by process name                                                    |                                                                                       |
+| `kill -9 PID`        | `kill -9 1234`    | Force kill a process with PID 1234                                         |                                                                                       |
+| `pkill process name` | `pkill nginx`     | Kill process by name                                                       |                                                                                       |
+| `nice -n 10 command` |                   | Start process with lower priority                                          |                                                                                       |
+| `renice 5 PID`       |                   | Change running process priority                                            |                                                                                       |
+| `jobs`               |                   | show background                                                            |                                                                                       |
+
+# Kill Common Signals
+
+| Signal  | Number | Example       | Purpose        |
+| ------- | ------ | ------------- | -------------- |
+| SIGTERM | 15     | kill -15 1234 | Graceful stop  |
+| SIGKILL | 9      | kill -9 1234  | Forcel kill    |
+| SIGHUP  | 1      | kill -1 1234  | Reload config  |
+| SIGSTOP | 19     | kill -19 1234 | Pause process  |
+| SIGCONT | 18     | kill -18 1234 | Resume process |
 
 
 
@@ -32,38 +42,38 @@ Build a practical Linux command cheat sheet that I can use daily as a DevOps Eng
 
 **Navigate directories, manipulate files, and manage permissions.**
 
-| Command            | Usage Example           | Description                                                          |
-| :----------------- | :---------------------- | :------------------------------------------------------------------- |
-| **`ls`**           | `ls -lah`               | Lists directory contents with details, including hidden files.       |
-| **`cd directory`** | `cd /var/log`           | Changes the current working directory.                               |
-| **`pwd`**          | `pwd`                   | Prints the full path of the current working directory.               |
-| **`cp`**           | `cp -r source dest`     | Copies files or directories recursively.                             |
-| **`mv`**           | `mv file.txt new.txt`   | Moves or renames files and directories.                              |
-| **`rm`**           | `rm -rf dir_name`       | Removes files or directories (use caution with `-rf`).               |
-| **`mkdir`**        | `mkdir -p /a/b/c`       | Creates a new directory with parent directories                      |
-| **`chmod`**        | `chmod 755 script.sh`   | Changes file access permissions (read, write, execute).              |
-| **`chown`**        | `chown user:group file` | Changes file owner and group.                                        |
-| **`df`**           | `df -h`                 | Displays disk space usage for file systems in human-readable format. |
-| **`du`**           | `du -sh folder`         | Estimates file space usage for a specific directory.                 |
-| `cd ..`            | `cd ..`                 | Move one level up from the current directory                         |
-| `cd or cd ~`       | `cd or cd ~`            | Go to home directory                                                 |
-| `cd -`             | `cd -`                  | Go to previous directory                                             |
-| `touch`            | `touch file.txt`        | Create file                                                          |
-| `mkdir`            | `mkdir test`            | Create test name directory                                           |
-| `cat`              | `cat file.txt`          | Display file content                                                 |
-| `less `            | `less file.txt`         | View large file                                                      |
-| `head`             | `head file.txt`         | show first 10 lines                                                  |
-| `tail`             | `tail file.txt`         | show last 10 lines                                                   |
-| `tail -f`          | `tail -f logfile.log`   | live log monitoring                                                  |
-| `find`             | `find / -name file.txt` | Find file having name file in / directory                            |
-| `find`             | `find . -type -f`       | Find all files in current directory                                  |
-| `locate`           | 'locate nginx.conf'     | Fast file search (need to install)                                   |
-| `which`            | `which bash`            | Locate executable means where bash command located                   |
-| `whereis`          | `whereis ssh`           | Locate binary and man pages                                          |
-| `df -h`            | `df -h`                 | Disk space usage                                                     |
-| `du -sh`           | `du -sh`                | Directory size                                                       |
-| `lsblk`            | `lsblk`                 | block devices                                                        |
-| `mount`            | `mount`                 | Mounted filesystems                                                  |
+| Command            | Usage Example                          | Description                                                          |
+| :----------------- | :------------------------------------- | :------------------------------------------------------------------- |
+| **`ls`**           | `ls -lah`                              | Lists directory contents with details, including hidden files.       |
+| **`cd directory`** | `cd /var/log`                          | Changes the current working directory.                               |
+| **`pwd`**          | `pwd`                                  | Prints the full path of the current working directory.               |
+| **`cp`**           | `cp -r source dest`                    | Copies files or directories recursively.                             |
+| **`mv`**           | `mv file.txt new.txt`                  | Moves or renames files and directories.                              |
+| **`rm`**           | `rm -rf dir_name`                      | Removes files or directories (use caution with `-rf`).               |
+| **`mkdir`**        | `mkdir -p /a/b/c`                      | Creates a new directory with parent directories                      |
+| **`chmod`**        | `chmod 755 script.sh`                  | Changes file access permissions (read, write, execute).              |
+| **`chown`**        | `chown user:group file`                | Changes file owner and group.                                        |
+| **`df`**           | `df -h`                                | Displays disk space usage for file systems in human-readable format. |
+| **`du`**           | `du -sh folder`                        | Estimates file space usage for a specific directory.                 |
+| `cd ..`            | `cd ..`                                | Move one level up from the current directory                         |
+| `cd or cd ~`       | `cd or cd ~`                           | Go to home directory                                                 |
+| `cd -`             | `cd -`                                 | Go to previous directory                                             |
+| `touch`            | `touch file.txt`                       | Create file                                                          |
+| `mkdir`            | `mkdir test`                           | Create test name directory                                           |
+| `cat`              | `cat file.txt`                         | Display file content                                                 |
+| `less `            | `less file.txt`                        | View large file                                                      |
+| `head`             | `head file.txt`                        | show first 10 lines                                                  |
+| `tail`             | `tail file.txt`                        | show last 10 lines                                                   |
+| `tail -f`          | `tail -f logfile.log`                  | live log monitoring                                                  |
+| `find`             | `find / -name file.txt`, -type , -size | Find file having name file in / directory                            |
+| `find`             | `find . -type -f`                      | Find all files in current directory                                  |
+| `locate`           | 'locate nginx.conf'                    | Fast file search (need to install)                                   |
+| `which`            | `which bash`                           | Locate executable means where bash command located                   |
+| `whereis`          | `whereis ssh`                          | Locate binary and man pages                                          |
+| `df -h`            | `df -h`                                | Disk space usage                                                     |
+| `du -sh`           | `du -sh`                               | Directory size                                                       |
+| `lsblk`            | `lsblk`                                | block devices                                                        |
+| `mount`            | `mount`                                | Mounted filesystems                                                  |
 
 
 
@@ -84,3 +94,16 @@ Build a practical Linux command cheat sheet that I can use daily as a DevOps Eng
 | `tracepath`      | `tracepath google.com`        | Route diagnostics                                                                    |
 | `nslookup`       | `nslookup google.com`         | DNS lookup                                                                           |
 | `host`           | `host google.com`             | DNS query                                                                            |
+| `curl`           | `curl URL`                    | Fetch webpage/API                                                                    |
+| `wget`           | `wget URL`                    | Download file                                                                        |
+
+## 🌐 Port and Connection Checks
+
+
+| Command            | Usage Example             | Description            | Flag                                                                                          |
+| ------------------ | ------------------------- | ---------------------- | --------------------------------------------------------------------------------------------- |
+| `ss -tulnp`        | ss -tulnp \| grep 22      | Show listening ports   | t=TCP socket, u=UDP sockets, l=listening sockets, n=Numeric output, p=show process using port |
+| `netstat -tulnp`   | netstat -tulnp \| grep 22 | Legacy port viewer(nee |                                                                                               |
+| `lsof -i :80`      | `lsof -i :80`             | Check who uses p       |                                                                                               |
+| `telnet host port` | `telnet host port`        | Test conne             |                                                                                               |
+| `nc -zv host port` | `nc -zv host port`        | Test                   |                                                                                               |
