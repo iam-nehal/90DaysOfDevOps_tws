@@ -27,8 +27,7 @@ Lists all running `sshd` processes, including the main listener and each activ
 - 1210 -> active user session ( `pts/0`)
 
 Output:
-
-![[Pasted image 20260605114738.png|697]]
+![[Pasted image 20260605140649.png]]
 
 ----
 
