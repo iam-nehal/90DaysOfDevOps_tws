@@ -27,7 +27,7 @@ Lists all running `sshd` processes, including the main listener and each activ
 - 1210 -> active user session ( `pts/0`)
 
 Output:
-![[Pasted image 20260605140649.png]]
+Pasted image 20260605140649.png
 
 ----
 
@@ -44,7 +44,7 @@ Shows detailed resource usage and ownership of SSH daemon and session processes.
 
 Output:
 
-![[Pasted image 20260605115710.png]]
+Pasted image 20260605115710.png
 
 ---
 ## 🔹 Service Commands
@@ -62,7 +62,7 @@ Displays the health, uptime, and recent activity of the SSH service managed by s
 - Successful public key authentication
 
 Output:
-![[Pasted image 20260605120251.png]]
+Pasted image 20260605120251.png
 
 ---
 
@@ -78,7 +78,7 @@ Lists all currently running system services, confirming overall system health.
 -  Instance is stable
 
 Output:
-![[Pasted image 20260605122444.png]]
+Pasted image 20260605122444.png
 
 ----
 
@@ -98,7 +98,7 @@ Shows the latest SSH service logs, including service startup and authentication 
 
 
 Output:
-![[Pasted image 20260605123045.png]]
+Pasted image 20260605123045.png
 
 ---
 
@@ -114,7 +114,7 @@ Displays the most recent authentication and authorization activity on the system
 -  cron jobs running as root
 
 Output:
-![[Pasted image 20260605123313.png]]
+Pasted image 20260605123313.png
 
 ## ✅ Key Learnings
 
