@@ -1,5 +1,5 @@
 
-# � SSH Service – Linux Troubleshooting Runbook
+# SSH Service – Linux Troubleshooting Runbook
 
 **Date:** 06-06-2026
 
