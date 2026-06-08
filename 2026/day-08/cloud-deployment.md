@@ -15,7 +15,7 @@
 ssh -i your-key.pem ubuntu@<your-instance-ip>
 ```
 
-![](sshconn.png)
+![](sshconnection.png)
 
 ---
 
