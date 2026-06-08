@@ -28,7 +28,8 @@ Lists all running `sshd` processes, including the main listener and each activ
 
 Output:
 
-"Pasted image 20260605140649.png"
+![](pgrepssh.png)
+
 ----
 
 ## 2. ps aux | grep sshd
