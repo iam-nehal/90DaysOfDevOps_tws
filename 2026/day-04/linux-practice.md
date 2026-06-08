@@ -27,10 +27,8 @@ Lists all running `sshd` processes, including the main listener and each activ
 - 1210 -> active user session ( `pts/0`)
 
 Output:
-```
-Pasted image 20260605140649.png
-```
 
+"Pasted image 20260605140649.png"
 ----
 
 ## 2. ps aux | grep sshd
