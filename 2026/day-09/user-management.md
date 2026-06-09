@@ -114,7 +114,7 @@ grep -E "developers|admins" /etc/group
 
 ### Expected Output
 
-![](assigroup.png)
+![](assigngroup.png)
 
 ### Explanation
 - `usermod -aG` modifies an existing user's group memberships.
@@ -157,7 +157,7 @@ ls -l /opt/dev-project/
 
 ### Expected Output
 
-![[Pasted image 20260609134650.png]]
+![](shareddirectory.png)
 
 ### Explanation
 - `chmod 775` breaks down as:
