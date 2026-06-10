@@ -110,7 +110,7 @@ tail -n 5 /etc/passwd
 
 ### � Output
 
-![](readfile.png)
+![](readfiles.png)
 
 ### � Command Explanations
 
