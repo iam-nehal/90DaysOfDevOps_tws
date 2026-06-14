@@ -1,40 +1,40 @@
 
 1.Ran **df -h** to confirm no additional volumes were attached yet.
 
-![[Pasted image 20260212233011.png]]
+![](1.png)
 
 2.Created a new EBS volume in AWS, ensuring the availability zone matched our EC2 instance (e.g., us-east-1f).
-![[Pasted image 20260210222636.png]]
+![](2.png)
 
 
-![[Pasted image 20260210223152.png]]
+![](3.png)
 
-![[Pasted image 20260210223442.png]]
+![](4.png)
 3.Attached the volume to your EC2 instance and verified it with **lsblk**.
-![[Pasted image 20260210223709.png]]
+![](5.png)
 
-![[Pasted image 20260210224039.png]]
+![](6.png)
 
-![[Pasted image 20260211202418.png]]
+![](7.png)
 
-![[Pasted image 20260211202544.png]]
+![](8.png)
 
 4.Created a mount directory (e.g., /mnt/data).
 
-![[Pasted image 20260211203341.png]]
+![](9.png)
 
 5.Formatted the new volume with **mkfs -t ext4**
 
-![[Pasted image 20260211204439.png]]
+![](10.png)
 
 6.Mounted the volume and added its UUID to /etc/fstab for permanent mount means after vm reboot this volume will not detach
-![[Pasted image 20260211204904.png]]
+![](11.png)
 
-![[Pasted image 20260211212903.png]]
+![](12.png)
 
 root@ip-172-31-64-170:/# vim /etc/fstab
 
-![[Pasted image 20260211213455.png]]
+![](13.png)
 
 root@ip-172-31-64-170:/# mount -a
 
@@ -49,36 +49,35 @@ Logical Volume Manager(LVM)
 Disk(s) -> Physical volume (pv) -> Volume group (vg) -> Logical volume (lv) -> Filesystem (ext4/xfs) 
 -> Mount Point(/data)
 
-![[Pasted image 20260211214904.png]]
+![](14.png)
 
-![[Pasted image 20260211215110.png]]
+![](15.png)
 
-![[Pasted image 20260211220743.png]]
+![](16.png)
 
-![[Pasted image 20260211220829.png]]
+![](17.png)
 
+![](18.png)
 
-![[Pasted image 20260211221740.png]]
+![](19.png)
 
-![[Pasted image 20260211222129.png]]
-
-![[Pasted image 20260211222411.png]]
+![](20.png)
 
 8.Formatted the logical volumes and mounted them to specific directories.
 
-![[Pasted image 20260211222712.png]]
+![](21.png)
 
-![[Pasted image 20260211223030.png]]
+![](22.png)
 
-![[Pasted image 20260211223300.png]]
+![](23.png)
 
-![[Pasted image 20260211224225.png]]
+![](24.png)
 
 9.Extended a logical volume with lvextend and resized the filesystem with **resize2fs**
 
-![[Pasted image 20260211225140.png]]
+![](25.png)
 
-![[Pasted image 20260211225402.png]]
+![](26.png)
 
 10.To safely remove LVM,  unmounted, removed the logical volumes, volume group, and physical volume, and wiped the disk clean.
 
@@ -86,20 +85,23 @@ Disk(s) -> Physical volume (pv) -> Volume group (vg) -> Logical volume (lv) -> F
 
 Unmount → Remove LV → Remove VG → Remove PV
 
-![[Pasted image 20260211230042.png]]
+![](27.png)
 
 Remove entry from **`/etc/fstab`** (VERY IMPORTANT)
 
-![[Pasted image 20260211230445.png]]
+![](28.png)
 
 **mount -a**
 (No errors should appear.)
 
-![[Pasted image 20260211230856.png]]
+![](29.png)
 
-![[Pasted image 20260211231108.png]]
+![](30.png)
 
-![[Pasted image 20260211231525.png]]
+![](31.png)
+
+![](32.png)
 
 
-![[Pasted image 20260211231925.png]]
+
+---
