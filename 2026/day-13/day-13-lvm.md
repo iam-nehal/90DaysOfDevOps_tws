@@ -105,3 +105,33 @@ Remove entry from **`/etc/fstab`** (VERY IMPORTANT)
 
 
 ---
+
+
+## 💡 Commands Summary
+
+| Command | Purpose |
+|---------|---------|
+| `lsblk` | List all block devices (disks) |
+| `pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` | Create Physical Volumes on all 3 disks |
+| `pvs` | View Physical Volumes |
+| `vgcreate devops-vg /dev/xvdf /dev/xvdg /dev/xvdh` | Create Volume Group from all 3 PVs |
+| `vgs` | View Volume Groups |
+| `lvcreate -L 10G -n app-data devops-vg` | Create a 10G Logical Volume |
+| `lvs` | View Logical Volumes |
+| `mkfs.ext4` | Format LV with ext4 filesystem |
+| `mount` | Mount the LV to a directory |
+| `lvextend -L +1G` | Extend the LV by 1G |
+| `resize2fs` | Resize filesystem after extending |
+| `df -h` | Check mounted filesystem usage |
+
+---
+
+## 🧠 What I Learned
+
+1. **LVM lets you combine multiple disks into one pool** - I attached 3 separate EBS volumes (10G + 12G + 14G) and merged them into a single 36G Volume Group. This is something traditional partitioning simply cannot do.
+
+2. **The PV → VG → LV layered architecture gives real flexibility** - Instead of being stuck with fixed partition sizes, LVM lets you allocate storage dynamically from the pool as your application needs grow.
+
+3. **Extending volumes online is safe and easy** - Using `lvextend` + `resize2fs`, I grew a mounted filesystem from 10G to 11G with zero downtime. This is extremely useful in production DevOps environments where you can't afford to stop services.
+
+---
