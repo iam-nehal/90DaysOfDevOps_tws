@@ -142,7 +142,7 @@ dig +short google.com
 ```
 
 
-![](16.png)
+![](6.png)
 
 > **I used `nslookup google.com` to verify DNS resolution. The query was successful and returned both IPv4 and IPv6 addresses for Google, confirming that the DNS resolver (127.0.0.53) is working correctly.**
 
