@@ -275,10 +275,3 @@ The **"ping → curl" combo** gives you a full L3-to-L7 health check in two comm
 | `ip addr show` | Local IP configuration | L3 - Network |
 
 ---
-
-Practiced the core networking toolkit today - `ping`, `traceroute`, `dig`, `ss`, `curl -I`, and `nc`. 
-Found that `traceroute google.com` took 19 hops but latency stayed flat at ~2ms throughout - traffic jumped straight onto Google's own network by hop 4 (`192.178.x.x`). 
-Running `curl -I https://google.com` returned a 301 redirect to `www.google.com` which then hit 200 - a reminder that even simple URLs have redirect chains hidden from the browser. 
-Also spotted 2 `TIME_WAIT` connections to `169.254.169.254` in `netstat` - the AWS EC2 metadata endpoint quietly running in the background.
-
----
