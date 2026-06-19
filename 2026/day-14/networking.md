@@ -28,7 +28,7 @@
 | UDP      | L4 - Transport   | Transport      | Fast, connectionless delivery (no guarantees)                                            |
 | DNS      | L7 - Application | Application    | Resolves domain names → IP addresses                                                     |
 | HTTP     | L7 - Application | Application    | Web traffic (plain text)                                                                 |
-| HTTPS    | L7 - Application | Application    | HTTP - L7 (Application) encrypted over TLS (L6 (Encryption) / L5 (Session) in OSI terms) |
+| HTTPS    | L7 - Application | Application    | HTTPS - L7 (Application) encrypted over TLS (L6 (Encryption) / L5 (Session) in OSI terms) |
 
 ---
 
